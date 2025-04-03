@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Location de voitures pour tous vos besoins. Réservez votre véhicule dès aujourd'hui!">
-    <title>Location de Voitures</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Vous pouvez lier un fichier CSS externe pour la mise en forme -->
+    <meta name="description" content="Location de voitures avec Licorne Rent. Louez votre véhicule en toute simplicité.">
+    <title>Licorne Rent - Location de Voitures</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #111;
+            background-color: #f8f8f8;
+            color: #333;
         }
         header {
-            background-color: #FF9900; /* Couleur principale d'Amazon */
+            background-color: #ff9900;
             padding: 20px;
             text-align: center;
             color: white;
@@ -24,40 +23,49 @@
             margin: 0;
         }
         nav {
-            background-color: #232f3e; /* Couleur secondaire d'Amazon */
-            padding: 10px;
+            background-color: #232f3e;
+            padding: 15px;
             text-align: center;
         }
         nav a {
             margin: 0 15px;
-            color: white;
+            color: #ff9900;
             text-decoration: none;
             font-weight: bold;
-        }
-        .hero {
-            background-image: url('car-hero.jpg'); /* Remplacer par l'image d'une voiture */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 150px 0;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: 2.5em;
+            font-size: 18px;
         }
         .container {
-            padding: 20px;
+            padding: 40px;
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
         }
         .section-title {
             text-align: center;
-            color: #FF9900;
+            color: #ff9900;
             font-size: 2em;
             margin-bottom: 20px;
         }
-        .services {
+        .services, .tabs {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+        }
+        .tab {
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ff9900;
+            color: white;
+            font-weight: bold;
+            margin: 5px;
+            text-align: center;
+            width: 30%;
+        }
+        .tab:hover {
+            background-color: #cc7a00;
         }
         .service {
             background-color: white;
@@ -69,9 +77,6 @@
             width: 30%;
             transition: transform 0.3s ease;
         }
-        .service:hover {
-            transform: scale(1.05);
-        }
         .service img {
             width: 100%;
             border-radius: 10px;
@@ -80,7 +85,7 @@
             color: #232f3e;
         }
         .price {
-            color: #FF9900;
+            color: #ff9900;
             font-size: 1.2em;
             font-weight: bold;
         }
@@ -90,94 +95,81 @@
             text-align: center;
             padding: 15px 0;
         }
+        #contact-form input, #contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #contact-form button {
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Location de Voitures</h1>
-    <p>Réservez votre véhicule de luxe ou utilitaire dès aujourd'hui à des prix compétitifs!</p>
+    <h1>Licorne Rent - Location de Voitures</h1>
 </header>
 
 <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#services">Nos Voitures</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
+    <a href="#qui-sommes-nous">Qui sommes-nous</a>
+    <a href="#nos-services">Nos Services</a>
+    <a href="#nous-contacter">Nous Contacter</a>
 </nav>
 
-<section class="hero" id="accueil">
-    <h2>Vivez l'expérience de la route avec nos voitures de location</h2>
-    <p>Réservez votre voiture de luxe, citadine, van ou limousine dès maintenant!</p>
+<section class="container" id="qui-sommes-nous">
+    <div class="section-title">Qui sommes-nous ?</div>
+    <p><strong>Licorne Rent</strong> est une entreprise spécialisée dans la location de voitures depuis 2010.</p>
+    <p>Nous proposons un large choix de véhicules pour tous types d’événements : mariages, déplacements professionnels, voyages et bien plus encore.</p>
+    <p>Notre mission est de vous offrir une **expérience de conduite exceptionnelle**, avec des véhicules de qualité et un service client dédié.</p>
 </section>
 
-<section class="container" id="services">
-    <div class="section-title">
-        <h2>Nos Voitures de Location</h2>
-    </div>
+<section class="container" id="nos-services">
+    <div class="section-title">Nos Services</div>
     <div class="services">
         <div class="service">
-            <img src="berline.jpg" alt="Berline">
-            <h3>Berline</h3>
-            <p>Confort et élégance pour vos trajets en ville ou sur autoroute.</p>
-            <p class="price">À partir de 50€/jour</p>
+            <h3>Location pour Mariage</h3>
+            <p>Offrez-vous une voiture de luxe pour le plus beau jour de votre vie.</p>
         </div>
         <div class="service">
-            <img src="citadine.jpg" alt="Citadine">
-            <h3>Citadine</h3>
-            <p>Idéale pour vos déplacements urbains. Facile à garer et économique.</p>
-            <p class="price">À partir de 30€/jour</p>
+            <h3>Location pour Anniversaire</h3>
+            <p>Faites sensation avec une limousine ou une voiture sportive pour votre fête.</p>
         </div>
         <div class="service">
-            <img src="limousine.jpg" alt="Limousine">
-            <h3>Limousine</h3>
-            <p>Pour vos événements spéciaux. Voyagez avec luxe et style.</p>
-            <p class="price">À partir de 200€/jour</p>
+            <h3>Location pour VTC</h3>
+            <p>Devenez chauffeur privé avec nos véhicules adaptés au transport de passagers.</p>
         </div>
         <div class="service">
-            <img src="van.jpg" alt="Van">
-            <h3>Van</h3>
-            <p>Idéal pour les groupes ou les familles. Confort et espace.</p>
-            <p class="price">À partir de 100€/jour</p>
+            <h3>Location pour Courses</h3>
+            <p>Louez une voiture rapide et performante pour vos déplacements quotidiens.</p>
         </div>
     </div>
 </section>
 
-<section class="container" id="gallery">
-    <div class="section-title">
-        <h2>Galerie</h2>
-    </div>
-    <div class="services">
-        <div class="service">
-            <img src="berline.jpg" alt="Berline">
-            <h3>Berline</h3>
-        </div>
-        <div class="service">
-            <img src="citadine.jpg" alt="Citadine">
-            <h3>Citadine</h3>
-        </div>
-        <div class="service">
-            <img src="limousine.jpg" alt="Limousine">
-            <h3>Limousine</h3>
-        </div>
-        <div class="service">
-            <img src="van.jpg" alt="Van">
-            <h3>Van</h3>
-        </div>
-    </div>
-</section>
-
-<section class="container" id="contact">
-    <div class="section-title">
-        <h2>Contactez-Nous</h2>
-    </div>
-    <p>Pour toute question ou réservation, contactez-nous dès maintenant :</p>
-    <p>Email: <a href="mailto:contact@locationvoiture.fr">contact@locationvoiture.fr</a></p>
-    <p>Téléphone: +33 1 23 45 67 89</p>
+<section class="container" id="nous-contacter">
+    <div class="section-title">Nous Contacter</div>
+    <p>Vous souhaitez louer une voiture ? Contactez-nous dès maintenant :</p>
+    <p><strong>Email :</strong> <a href="mailto:contact@licornerent.fr">contact@licornerent.fr</a></p>
+    <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+    <p><strong>Adresse :</strong> 12 Rue de la Location, Paris, France</p>
+    
+    <h3>Formulaire de Contact</h3>
+    <form id="contact-form">
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
 </section>
 
 <footer>
-    <p>&copy; 2025 Location de Voitures. Tous droits réservés.</p>
+    <p>&copy; 2025 Licorne Rent. Tous droits réservés.</p>
 </footer>
 
 </body>
